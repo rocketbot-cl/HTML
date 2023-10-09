@@ -60,14 +60,6 @@ class HTML:
         return etree.tostring(self._html, encoding=decode).decode(decode)
 
 
-
-html = HTML('listas.html')
-html.open_html()
-print(html.to_string())
-html.add_tag('div', 'Hola','class', 'new_class', xpath='/html/body/p[2]')
-print(html.to_string())       
-        
-
     
 
 
