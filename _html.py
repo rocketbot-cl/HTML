@@ -33,7 +33,8 @@ class HTML:
         if xpath: #si se proporciona la ubicacion
             
             location = self._html.xpath(xpath) #busca el elemento xpath
-            location.append(new_tag) #agrega la nueva etiqueta
+            #agrega la nueva etiqueta
+            etree.SubElement(location, new_tag)
 
         else: #sino, lo agrega al final
             self._html.append(new_tag)
@@ -49,9 +50,10 @@ class HTML:
             if path_save is None:
                 path_save = self.path
                 
-            with open(path_save) as saved_html:
+            with open(path_save, 'a') as saved_html:
                 saved_html.write(self.to_string(decode))
-                    
+            print('Successfully Saved')        
+
         except Exception as e:
             print('Error')
 
@@ -59,8 +61,6 @@ class HTML:
     def to_string(self, decode='utf-8'):
         return etree.tostring(self._html, encoding=decode).decode(decode)
 
-
-    
 
 
     
