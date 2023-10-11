@@ -1,4 +1,3 @@
-import os
 from lxml import etree
 import xml.etree.ElementTree as ET
 from bs4 import BeautifulSoup
@@ -18,7 +17,6 @@ class HTML:
         with open(self.path, encoding=encoding) as f:
             
             self.code = f.read()
-            # print(self.code)
             self._html = BeautifulSoup(self.code, 'html.parser')
 
     def add_tag(self, tag, tag_text, attr, attr_text, xpath=None):        
@@ -39,11 +37,7 @@ class HTML:
             print(location)
             location = location[0]
             print(location)
-            #location.insert(0, new_tag)
             location.append(new_tag)
-            # print(etree.tostring(location))
-            #etree.ElementTree.SubElement(location, new_tag) #agrega la nueva etiqueta
-            #etree.ElementTree.SubElement(location, new_tag)
 
         else: #sino, lo agrega al final
             self._html.append(new_tag)
@@ -52,15 +46,15 @@ class HTML:
     def save_html(self, path_save=None, decode='utf-8'):
         if self._html is None:
             raise FileNotFoundError('The HTML file is not open')
-
+        # si no pasan el path, se sobreescribe el doc abierto
         if path_save is None:
             path_save = self.path
                 
         with open(path_save, 'w', encoding=decode) as saved_html:
-            #saved_html.write(etree.tostring(self._html))
             saved_html.write(self.to_string(decode))
         print('Successfully Saved')    
         
+    #para mostrar el html legible    
     def to_string(self, decode='utf-8'):
         return self._html.prettify(decode).decode(decode)
 
