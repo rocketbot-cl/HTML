@@ -45,46 +45,7 @@ except NameError:
 """
 module = GetParams("module")
 
-def to_string(self, decode='utf-8'):
-            return mod_html_sessions[session]['data'].prettify(decode).decode(decode)
 
-def xpath_to_css(xpath):
-        
-        if not xpath:
-                raise Exception('Xpath undefined')
-
-        css_parts = []
-        parts = xpath.split("/")
-
-        for part in parts:
-            
-            if not part or part == "":
-                continue
-
-            # Selector de id
-            if "@id=" in part:
-                id_name = part.split('="')[1].split('"')[0]
-                css_parts.append(f"#{id_name}")
-
-            # Selector de clase
-            elif "contains(@class," in part:
-                class_name = part.split('="')[1].split('"')[0]
-                css_parts.append(f".{class_name}")
-
-            # Selector de nth-child
-            elif "[" in part and "]" in part:
-                tag_name, child_num = part.split("[")
-                child_num = child_num.strip("]")
-                css_parts.append(f"{tag_name}:nth-child({child_num})")
-
-            # Selector de tag
-            else:
-                css_parts.append(part)
-
-        # Unir las partes para formar el selector CSS completo
-        css = " > ".join(css_parts)
-        print(css)
-        return css
 try:
 
     if module == "htmlsession":
@@ -159,11 +120,50 @@ try:
         if not 'data' in mod_html_sessions[session]:
             # Remember set session
             raise Exception('The session no exists')
+        
+        global xpath_to_css
+
+        def xpath_to_css(xpath):
+            if not xpath:
+                    raise Exception('Xpath undefined')
+
+            css_parts = []
+            parts = xpath.split("/")
+
+            for part in parts:
+                
+                if not part or part == "":
+                    continue
+
+                # Selector de id
+                if "@id=" in part:
+                    id_name = part.split('="')[1].split('"')[0]
+                    css_parts.append(f"#{id_name}")
+
+                # Selector de clase
+                elif "contains(@class," in part:
+                    class_name = part.split('="')[1].split('"')[0]
+                    css_parts.append(f".{class_name}")
+
+                # Selector de nth-child
+                elif "[" in part and "]" in part:
+                    tag_name, child_num = part.split("[")
+                    child_num = child_num.strip("]")
+                    css_parts.append(f"{tag_name}:nth-child({child_num})")
+
+                # Selector de tag
+                else:
+                    css_parts.append(part)
+
+            # Unir las partes para formar el selector CSS completo
+            css = " > ".join(css_parts)
+            print(css)
+            return css
 
         # Verifica si el selector es un XPath
         if css.startswith('//') or css.startswith('/'):
             # si lo es, lo convierte a CSS selector
-            css_selector = xpath_to_css(css)
+            css = xpath_to_css(css)
 
         new_tag = mod_html_sessions[session]['data'].new_tag(tag) #crea la nueva etiqueta
         new_tag.string = tag_text #setea la leyenda de la etiqueta
@@ -174,7 +174,6 @@ try:
             
                 location = mod_html_sessions[session]['data'].select(css)
                 location = location[0]
-                #print(location)
                 location.append(new_tag)            
 
             else: #sino, lo agrega al final
@@ -186,12 +185,7 @@ try:
             raise e
               
         if var_:
-            # html = mod_html_sessions[session]['data']
-            # res = BeautifulSoup(html, 'html.parser').decode()
-            # res = to_string(mod_html_sessions[session])
-            # res = ET.tostring(mod_html_sessions[session]['data']).decode()
-            mod_html_sessions[session]['data'] = BeautifulSoup(html, 'html.parser')
-            res = mod_html_sessions[session]['data']
+            res = mod_html_sessions[session]['data'].prettify('utf-8').decode('utf-8')
             SetVar(var_, res)
 
     if module == 'savehtml':
@@ -207,10 +201,10 @@ try:
         
         try:
             if path_save is None:
-                path_save = path  # path tiene que ser el archivo abierto
+                path_save = path  
                 
             with open(path_save, 'w', encoding=decode) as saved_html:
-              saved_html.write(mod_html_sessions[session]['data'].to_string(decode))    
+              saved_html.write(mod_html_sessions[session]['data'].prettify(decode).decode(decode))    
 
         except Exception as e:
             PrintException()
