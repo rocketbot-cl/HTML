@@ -127,15 +127,28 @@ try:
         HTML Session end: Remove from sessions a HTML
         """
         session = GetParams('session')
-        if not session:
-            session = SESSION_DEFAULT
-        if session in mod_html_sessions:
-            del mod_html_sessions[session]
-            if session == SESSION_DEFAULT:
-                mod_html_sessions[SESSION_DEFAULT] = {}
-        else:
-            raise Exception("The session you want to delete does not exist")
-    
+        var_ = GetParams('result')
+
+        res = True
+
+        try:
+            if not session:
+                session = SESSION_DEFAULT
+            if session in mod_html_sessions:
+                del mod_html_sessions[session]
+                if session == SESSION_DEFAULT:
+                    mod_html_sessions[SESSION_DEFAULT] = {}
+            else:
+                raise Exception("The session you want to delete does not exist")
+        
+        except Exception as e:
+            PrintException()
+            res = False
+            raise e
+        
+        if var_:
+            SetVar(var_, res)
+
     if module == "addTag":
         """
         HTML Insert Tag: add new tag to HTML
