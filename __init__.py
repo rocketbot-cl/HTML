@@ -108,17 +108,17 @@ try:
         try:
             if path: #Si pasan un path
                 with open(path, encoding=encoding) as f:
-                    html_ = f.read()
-            
-                    html = BeautifulSoup(html_, 'html.parser')
+                    html = f.read()
+            else:
+                    html = html_
+
+            mod_html_sessions[session]['data'] = BeautifulSoup(html, 'html.parser')
 
         except Exception as e:
             PrintException()
             res = False
             raise e
         
-        mod_html_sessions[session]['data'] = BeautifulSoup(html, 'html.parser')
-
         if var_:
             SetVar(var_, res)
 
