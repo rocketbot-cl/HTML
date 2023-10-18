@@ -475,7 +475,28 @@
                 },
                 "id": "session",
                 "css": "col-md-6"
-                }
+                },
+                {
+                    "type": "input",
+                    "placeholder": {
+                        "es": "Variable",
+                        "en": "Variable",
+                        "pr": "Variável"
+                    },
+                    "title": {
+                        "es": "Asignar resultado a variable:",
+                        "en": "Assign result to variable:",
+                        "pr": "Atribuir resultado à variável:"
+                    },
+                    "help": {
+                        "es": "Nombre de variable sin {}",
+                        "en": "Variable name without {}",
+                        "pr": "Nome da variável sem {}"
+                    },
+                    "remove_vars" : true,
+                    "id": "result",
+                    "css": "col-md-6"
+                    }
             ]
         },
         "video_youtube": null,
