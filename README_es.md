@@ -21,7 +21,7 @@ __Descarga__ e __instala__ el contenido en la carpeta 'modules' en la ruta de Ro
 Carga datos de un archivo HTML en memoria
 
 2. Insertar Etiqueta  
-Inserta una etiqueta en el archivo HTML
+Inserta una etiqueta con atributo en un lugar específico del archivo HTML
 
 6. Guardar archivo HTML  
 Guarda datos en un archivo HTML
