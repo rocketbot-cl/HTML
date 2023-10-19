@@ -2,9 +2,9 @@
 
 
 
-# XML
+  # HTML
   
-Abre archivos XML para extrer informacion.  
+Abre archivos HTML para extrer o agregar informacion.  
 
 ## How to install this module
   
@@ -15,27 +15,17 @@ __Download__ and __install__ the content in 'modules' folder in Rocketbot path
 ## Overview
 
 
-1. Load XML Fil  
-Load data from an XML file into memory
+1. Load HTML  
+Load data from an HTML file into memory
 
-2. Insert Node  
-Insert node on XML
+2. Insert Tag  
+Insert tag on HTML
 
-3. Get Node  
-Obtain node data
+3. Save HTML File  
+Save HTML File
 
-4. Update Node  
-Update node on XML
-
-5. Delete Node  
-Delete node by XPath
-
-6. Save XML File  
-Save XML File
-
-7. End XML Session  
-Remove an xml session from memory  
-
+4. End HTML Session  
+Remove an HTML session from memory  
 
 
 
