@@ -2,7 +2,6 @@
 
 
 
-
 # HTML
   
 Abra arquivos HTML para extrair ou adicionar informações.
