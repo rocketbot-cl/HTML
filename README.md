@@ -4,7 +4,7 @@
 
   # HTML
   
-Abre archivos HTML para extrer o agregar informacion.  
+Open HTML files to extract or add information.  
 
 ## How to install this module
   
