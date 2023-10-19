@@ -60,9 +60,9 @@
                 {
                 "type": "textarea",
                 "placeholder": {
-                    "es": "<?html version=\"1.0\" encoding=\"UTF-8\"?>\n<?xml-stylesheet type='text/xsl'?> \n<Users>\n\t<User>\n\t<Name>User 1</Name>\n\t<Surname>Test</Surname>\n\t<Country>USA</Country>\n\t<Company>Acme</Company>\n\t</User>\n</Users>",
-                    "en": "<?html version=\"1.0\" encoding=\"UTF-8\"?>\n<?xml-stylesheet type='text/xsl'?> \n<Users>\n\t<User>\n\t<Name>User 1</Name>\n\t<Surname>Test</Surname>\n\t<Country>USA</Country>\n\t<Company>Acme</Company>\n\t</User>\n</Users>",
-                    "pr": "<?html version=\"1.0\" encoding=\"UTF-8\"?>\n<?xml-stylesheet type='text/xsl'?> \n<Users>\n\t<User>\n\t<Name>User 1</Name>\n\t<Surname>Test</Surname>\n\t<Country>USA</Country>\n\t<Company>Acme</Company>\n\t</User>\n</Users>"
+                    "es": "<!DOCTYPE html>\n<html lang=\"es\">\n<head>\n\t <meta charset=\"UTF-8\">\n\t<meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n\t<title></title>\n</head>",
+                    "en": "<!DOCTYPE html>\n<html lang=\"es\">\n<head>\n\t <meta charset=\"UTF-8\">\n\t<meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n\t<title></title>\n</head>",
+                    "pr": "<!DOCTYPE html>\n<html lang=\"es\">\n<head>\n\t <meta charset=\"UTF-8\">\n\t<meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n\t<title></title>\n</head>"
                 },
                 "title": {
                     "es": "HTML como texto",
