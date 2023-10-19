@@ -21,7 +21,7 @@ Load data from an HTML file into memory
 2. Insert Tag  
 Insert tag on HTML
 
-3. Save HTML File  
+3. Save HTML 
 Save HTML File
 
 4. End HTML Session  
