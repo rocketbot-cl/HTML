@@ -39,7 +39,6 @@ Remove uma sessão HTML e libera memória
 - windows
 - mac
 - linux
-- docker
 
 ### Dependencies
 - [**beautifulsoup4**](https://pypi.org/project/beautifulsoup4/)

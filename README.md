@@ -39,7 +39,6 @@ Remove an HTML session from memory
 - windows
 - mac
 - linux
-- docker
 
 ### Dependencies
 - [**beautifulsoup4**](https://pypi.org/project/beautifulsoup4/)

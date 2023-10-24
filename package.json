@@ -13,10 +13,10 @@
     "linux": true,
     "windows":true,
     "mac":true,
-    "docker":true,
+    "docker":false,
     "name": "HTML",
     "dependencies": {
-        "beautifulsoup4": ""
+        "beautifulsoup4": "4.12.2"
     },
       "title": {
         "en": "HTML",
@@ -59,6 +59,10 @@
                     "en": "HTML file path",
                     "pr": "Caminho do arquivo HTML"
                 },
+                "description":{
+                    "es": "Conecta el archivo HTML correspondiente a la ruta",
+                    "en": "Link the HTML file to the corresponding path"
+                },
                 "id": "path",
                 "css": "col-md-12"
                 },
@@ -73,6 +77,10 @@
                     "es": "HTML como texto",
                     "en": "HTML as text",
                     "pr": "HTML como texto"                            
+                },
+                "description":{
+                    "es": "Conecta el código HTML pasado como texto, sin necesidad de tener creado el archivo",
+                    "en": "Connect the HTML code passed as text, without having to create the file"
                 },
                 "id": "html",
                 "css": "col-md-12"
@@ -89,25 +97,28 @@
                     "en": "Encoding",
                     "pr": "Codificação"
                 },
+                "description":{
+                    "es": "Codificación con la que se requiere abrir el archivo HTML. Por default es UTF-8",
+                    "en": "Encoding with which the HTML file is required to be opened. By default it is UTF-8"
+                },
                 "id": "encoding",
                 "css": "col-md-2"
                 },
                 {
                 "type": "input",
                 "placeholder": {
-                    "es": "Variable",
-                    "en": "Variable",
-                    "pr": "Variável"
+                    "es": "var",
+                    "en": "var",
+                    "pr": "var"
                 },
                 "title": {
                     "es": "Asignar resultado a variable:",
                     "en": "Assign result to variable:",
                     "pr": "Atribuir resultado à variável:"
                 },
-                "help": {
-                    "es": "Nombre de variable sin {}",
-                    "en": "Variable name without {}",
-                    "pr": "Nome da variável sem {}"
+                "description":{
+                    "es": "Variable donde se almacena el resultado de Cargar HTML",
+                    "en": "Variable where the result of Load HTML is stored"
                 },
                 "remove_vars" : true,
                 "id": "result",
@@ -116,19 +127,18 @@
                 {
                 "type": "input",
                 "placeholder": {
-                    "es": "Default",
-                    "en": "Default",
-                    "pr": "Default"
+                    "es": "s1",
+                    "en": "s1",
+                    "pr": "s1"
                 },
                 "title": {
                     "es": "ID Sesión",
                     "en": "Session ID",
                     "pr": "ID Sessão"
                 },
-                    "help": {
-                    "es": "Sesión para multiples archivos",
-                    "en": "Session for multiple files",
-                    "pr":" Sessão para vários arquivos"
+                "description":{
+                    "es": "ID opcional para poder identificar sesiones abiertas",
+                    "en": "Optional ID to identify open sessions"
                 },
                 "id": "session",
                 "css": "col-md-6"
@@ -173,19 +183,18 @@
                 {
                 "type": "input",
                 "placeholder": {
-                    "es": "Default",
-                    "en": "Default",
-                    "pr": "Default"
+                    "es": "s1",
+                    "en": "s1",
+                    "pr": "s1"
                 },
                 "title": {
                     "es": "ID Sesión",
                     "en": "Session ID",
                     "pr": "ID Sessão"
                 },
-                    "help": {
-                    "es": "Sesión para multiples archivos",
-                    "en": "Session for multiple files",
-                    "pr":" Sessão para vários arquivos"
+                "description":{
+                    "es": "ID del archivo abierto al que se le quiere agregar la etiqueta, en el caso de tener multiples sesiones abiertas",
+                    "en": "ID of the open file to which you want to add the tag, in the case of having multiple open sessions"
                 },
                 "id": "session",
                 "css": "col-md-6"
@@ -193,19 +202,18 @@
                 {
                 "type": "input",
                 "placeholder": {
-                    "es": "Nombre",
-                    "en": "Name",
-                    "pr": "Nome"
+                    "es": "div",
+                    "en": "div",
+                    "pr": "div"
                 },
                 "title": {
                     "es": "Nombre de Etiqueta",
                     "en": "Tag name",
                     "pr": "Nome do tag"
                 },
-                "help": {
-                    "es": "ej: div",
-                    "en": "ex: div",
-                    "pr": "ex: div"
+                "description":{
+                    "es": "Nombre de la etiqueta HTML para crear el elemento",
+                    "en": "Name of the HTML tag to create the element"
                 },
                 "id": "tagName",
                 "css": "col-md-6"
@@ -213,19 +221,18 @@
                 {
                 "type": "input",
                 "placeholder": {
-                    "es": "Texto",
-                    "en": "Text",
-                    "pr": "Texto"
+                    "es": "Hola Mundo",
+                    "en": "Hello World",
+                    "pr": "Oi Mundo"
                 },
                 "title": {
                     "es": "Texto de la Etiqueta",
                     "en": "Tag Text",
                     "pr": "Texto do Tag"
                 },
-                "help": {
-                    "es": "ej: Hola Mundo",
-                    "en": "ex: Hello World",
-                    "pr": "ex: Oi Mundo"
+                "description":{
+                    "es": "Texto del Elemento HTML a crear con la etiqueta",
+                    "en": "Text of the HTML Element to create with the tag"
                 },
                 "id": "tagText",
                 "css": "col-md-6"
@@ -233,19 +240,18 @@
                 {
                 "type": "input",
                 "placeholder": {
-                    "es": "Atributo",
-                    "en": "Attribute",
-                    "pr": "Atributo"
+                    "es": "class",
+                    "en": "class",
+                    "pr": "class"
                 },
                 "title": {
                     "es": "Atributo de la Etiqueta",
                     "en": "Tag Attribute",
                     "pr": "Atributo do Tag"
                 },
-                "help": {
-                    "es": "ej: class",
-                    "en": "ex: class",
-                    "pr": "ex: class"
+                "description":{
+                    "es": "Nombre del Atributo HTML para la etiqueta a crear",
+                    "en": "HTML Attribute name for the tag to create"
                 },
                 "id": "attrName",
                 "css": "col-md-6"
@@ -253,19 +259,18 @@
                 {
                 "type": "input",
                 "placeholder": {
-                    "es": "Texto del Atributo",
-                    "en": "Attribute Text",
-                    "pr": "Texto do Atributo"
+                    "es": "miclase",
+                    "en": "myclass",
+                    "pr": "minhaclasse"
                 },
                 "title": {
                     "es": "Texto del Atributo",
                     "en": "Attribute Text",
                     "pr": "Texto do Atributo"
                 },
-                "help": {
-                    "es": "ej: miclase",
-                    "en": "ex: myclass",
-                    "pr": "ex: minhaclasse"
+                "description":{
+                    "es": "Atributo HTML para la etiqueta a crear",
+                    "en": "HTML Attribute for the tag to create"
                 },
                 "id": "attrText",
                 "css": "col-md-6"
@@ -282,10 +287,9 @@
                     "en": "Insertion location",
                     "pr": "Local de inserção"
                 },
-                "help": {
-                    "es": "Ingrese el selector css o Xpath donde se realizara la inserción de la etiqueta",
-                    "en": "Enter the css selector or Xpath where the tag insertion will be made",
-                    "pr": "Digite o seletor css ou Xpath onde será feita a inserção da etiqueta"
+                "description": {
+                    "es": "Selector css o Xpath donde se realizara la inserción de la etiqueta",
+                    "en": "Css selector or Xpath where the tag insertion will be made"    
                 },
                 "id": "css",
                 "css": "col-md-6"
@@ -293,9 +297,9 @@
                 {
                 "type": "input",
                 "placeholder": {
-                    "es": "Variable",
-                    "en": "Variable",
-                    "pr": "Variável"
+                    "es": "var",
+                    "en": "var",
+                    "pr": "var"
                 },
                 "title": {
                     "es": "Asignar resultado a variable:",
@@ -306,6 +310,10 @@
                     "es": "Nombre de variable sin {}",
                     "en": "Variable name without {}",
                     "pr": "Nome da variável sem {}"
+                },
+                "description": {
+                    "es": "Variable donde se almacena el resultado de Insertar Etiqueta",
+                    "en": "Variable where the result of Insert Tag is stored"    
                 },
                 "remove_vars" : true,
                 "id": "result",
@@ -365,20 +373,28 @@
                     "en": "If you do not choose a path the open HTML file will be overwritten",
                     "pr": "Se você não escolher um caminho, o arquivo HTML aberto será sobrescrito"
                 },
+                "description": {
+                    "es": "Ruta donde se va a guardar el archivo HTML cargado",
+                    "en": "Path where the uploaded HTML file will be saved"    
+                },
                 "id": "pathSave",
                 "css": "col-md-12"
                 }, 
                 {
                     "type": "input",
                     "placeholder": {
-                        "es": "utf-8",
-                        "en": "utf-8",
-                        "pr": "utf-8"
+                        "es": "UTF-8",
+                        "en": "UTF-8",
+                        "pr": "UTF-8"
                     },
                     "title": {
                         "es": "Codificación",
                         "en": "Encoding",
                         "pr": "Codificação"
+                    },
+                    "description": {
+                        "es": "Codificación con la que se va a guardar el archivo HTML cargado",
+                        "en": "Encoding with which to save the uploaded HTML file"    
                     },
                     "id": "decode",
                     "css": "col-md-2"
@@ -386,9 +402,9 @@
                 {
                 "type": "input",
                 "placeholder": {
-                    "es": "Variable",
-                    "en": "Variable",
-                    "pr": "Variável"
+                    "es": "var",
+                    "en": "var",
+                    "pr": "var"
                 },
                 "title": {
                     "es": "Asignar resultado a variable:",
@@ -400,6 +416,10 @@
                     "en": "Variable name without {}",
                     "pr": "Nome da variável sem {}"
                 },
+                "description": {
+                    "es": "Variable donde se almacena el resultado de Guardar HTML",
+                    "en": "Variable where the result of Save HTML is stored"    
+                },
                 "remove_vars" : true,
                 "id": "result",
                 "css": "col-md-6"
@@ -407,19 +427,18 @@
                 {
                 "type": "input",
                 "placeholder": {
-                    "es": "Default",
-                    "en": "Default",
-                    "pr": "Default"
+                    "es": "s1",
+                    "en": "s1",
+                    "pr": "s1"
                 },
                 "title": {
                     "es": "ID Sesión",
                     "en": "Session ID",
                     "pr": "ID Sessão"
                 },
-                    "help": {
-                    "es": "Sesión para multiples archivos",
-                    "en": "Session for multiple files",
-                    "pr":" Sessão para vários arquivos"
+                "description": {
+                    "es": "ID para poder identificar el archivo a guardar en caso de tener múltiples sesiones",
+                    "en": "ID to identify the file to save in case of having multiple sessions"    
                 },
                 "id": "session",
                 "css": "col-md-6"
@@ -464,19 +483,18 @@
                 {
                 "type": "input",
                 "placeholder": {
-                    "es": "Default",
-                    "en": "Default",
-                    "pr": "Default"
+                    "es": "s1",
+                    "en": "s1",
+                    "pr": "s1"
                 },
                 "title": {
                     "es": "ID Sesión",
                     "en": "Session ID",
                     "pr": "ID Sessão"
                 },
-                    "help": {
-                    "es": "Sesión para multiples archivos",
-                    "en": "Session for multiple files",
-                    "pr":" Sessão para vários arquivos"
+                "description": {
+                    "es": "ID para poder identificar el archivo a cerrar en caso de tener múltiples sesiones",
+                    "en": "ID to identify the file to close in case of having multiple sessions"    
                 },
                 "id": "session",
                 "css": "col-md-6"
@@ -484,9 +502,9 @@
                 {
                     "type": "input",
                     "placeholder": {
-                        "es": "Variable",
-                        "en": "Variable",
-                        "pr": "Variável"
+                        "es": "var",
+                        "en": "var",
+                        "pr": "var"
                     },
                     "title": {
                         "es": "Asignar resultado a variable:",
@@ -497,6 +515,10 @@
                         "es": "Nombre de variable sin {}",
                         "en": "Variable name without {}",
                         "pr": "Nome da variável sem {}"
+                    },
+                    "description": {
+                        "es": "Variable donde se almacena el resultado de Cerrar Sesión",
+                        "en": "Variable where the result of End Session is stored"    
                     },
                     "remove_vars" : true,
                     "id": "result",
