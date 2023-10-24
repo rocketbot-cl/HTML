@@ -25,12 +25,20 @@ Para instalar librerias se debe ingresar por terminal a la carpeta "libs"
 """
 from bs4 import BeautifulSoup
 from xml.etree import ElementTree as ET
+import os
+
+base_path = tmp_global_obj["basepath"]
+cur_path = os.path.join(base_path, 'modules', 'HTML', 'libs')
+
+if cur_path not in sys.path:
+        sys.path.append(cur_path)
+
+from _html import HTML
 
 # Globals declared here.
 global mod_html_sessions
 # Defaults declared here.
 SESSION_DEFAULT = "default"
-
 # Initialize settings for the module here.
 
 try:
@@ -44,6 +52,7 @@ except NameError:
     Obtengo el modulo que fue invocado
 """
 module = GetParams("module")
+
 
 
 try:
@@ -63,18 +72,12 @@ try:
             session = SESSION_DEFAULT
         if not encoding:
             encoding = "utf-8"
-
-        mod_html_sessions[session]={'path': path}
+       
         
         try:
-            if path: #Si pasan un path
-                with open(path, encoding=encoding) as f:
-                    html = f.read()
-            else:
-                    html = html_
-
-            mod_html_sessions[session]['data'] = BeautifulSoup(html, 'html.parser')
-
+            html = HTML(path)
+            html.open_html()
+            mod_html_sessions[session]={'path': path, 'html': html}
         except Exception as e:
             PrintException()
             res = False
@@ -88,15 +91,27 @@ try:
         HTML Session end: Remove from sessions a HTML
         """
         session = GetParams('session')
-        if not session:
-            session = SESSION_DEFAULT
-        if session in mod_html_sessions:
-            del mod_html_sessions[session]
-            if session == SESSION_DEFAULT:
-                mod_html_sessions[SESSION_DEFAULT] = {}
-        else:
-            raise Exception("The session you want to delete does not exist")
-    
+        var_ = GetParams('result')
+
+        res = True
+        
+        try:
+            if not session:
+                session = SESSION_DEFAULT
+            if session in mod_html_sessions:
+                del mod_html_sessions[session]
+                if session == SESSION_DEFAULT:
+                    mod_html_sessions[SESSION_DEFAULT] = {}
+            else:
+                raise Exception("The session you want to delete does not exist")
+        except Exception as e:
+            PrintException()
+            res = False
+            raise e
+        
+        if var_:
+            SetVar(var_, res)
+
     if module == "addTag":
         """
         HTML Insert Tag: add new tag to HTML
@@ -117,75 +132,22 @@ try:
         if not session:
             session = SESSION_DEFAULT
 
-        if not 'data' in mod_html_sessions[session]:
+        if not 'html' in mod_html_sessions[session]:
             # Remember set session
             raise Exception('The session no exists')
         
-        global xpath_to_css
-
-        def xpath_to_css(xpath):
-            if not xpath:
-                    raise Exception('Xpath undefined')
-
-            css_parts = []
-            parts = xpath.split("/")
-
-            for part in parts:
-                
-                if not part or part == "":
-                    continue
-
-                # Selector de id
-                if "@id=" in part:
-                    id_name = part.split('="')[1].split('"')[0]
-                    css_parts.append(f"#{id_name}")
-
-                # Selector de clase
-                elif "contains(@class," in part:
-                    class_name = part.split('="')[1].split('"')[0]
-                    css_parts.append(f".{class_name}")
-
-                # Selector de nth-child
-                elif "[" in part and "]" in part:
-                    tag_name, child_num = part.split("[")
-                    child_num = child_num.strip("]")
-                    css_parts.append(f"{tag_name}:nth-child({child_num})")
-
-                # Selector de tag
-                else:
-                    css_parts.append(part)
-
-            # Unir las partes para formar el selector CSS completo
-            css = " > ".join(css_parts)
-            print(css)
-            return css
-
-        # Verifica si el selector es un XPath
-        if css.startswith('//') or css.startswith('/'):
-            # si lo es, lo convierte a CSS selector
-            css = xpath_to_css(css)
-
-        new_tag = mod_html_sessions[session]['data'].new_tag(tag) #crea la nueva etiqueta
-        new_tag.string = tag_text #setea la leyenda de la etiqueta
-        new_tag[attr]=attr_text #setea el atributo
-
         try:
-            if css: #si se proporciona la ubicacion
-            
-                location = mod_html_sessions[session]['data'].select(css)
-                location = location[0]
-                location.append(new_tag)            
+            html = mod_html_sessions[session]['html']
 
-            else: #sino, lo agrega al final
-                mod_html_sessions[session]['data'].append(new_tag)
+            html.add_tag(tag, tag_text, attr, attr_text, css)
             
+            res = html.to_string()
+
         except Exception as e:
             PrintException()
-            res = False
             raise e
               
         if var_:
-            res = mod_html_sessions[session]['data'].prettify('utf-8').decode('utf-8')
             SetVar(var_, res)
 
     if module == 'savehtml':
@@ -197,15 +159,15 @@ try:
         if not session:
             session = SESSION_DEFAULT
         
+        if not decode:
+            decode = 'utf-8'
+
         res = True
         
         try:
-            if path_save is None:
-                path_save = path  
-                
-            with open(path_save, 'w', encoding=decode) as saved_html:
-              saved_html.write(mod_html_sessions[session]['data'].prettify(decode).decode(decode))    
-
+            html = mod_html_sessions[session]['html']
+            html.save_html(path_save, decode)
+            
         except Exception as e:
             PrintException()
             res= False
@@ -214,7 +176,6 @@ try:
         if var_:
             SetVar(var_, res)
 
-   
 except Exception as e:
     PrintException()
     raise e

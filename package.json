@@ -1,6 +1,11 @@
 {
     "author":"Corina Suarez",
     "description": "Abre archivos HTML para extrer o agregar información.|  Open HTML files to get or add data.",
+    "description_lang": {
+        "en": "Module to open HTML files and get or add data",
+        "es": "Modulo para abrir archivos HTML y extraer o agregar información",
+        "pr": "Módulo para abrir arquivos HTML e extrair ou adicionar informações "
+    },
     "disclaimer":"THERE IS NO WARRANTY FOR THE PROGRAM, TO THE EXTENT PERMITTED BY APPLICABLE LAW. EXCEPT WHEN OTHERWISE STATED IN WRITING THE COPYRIGHT HOLDERS AND/OR OTHER PARTIES PROVIDE THE PROGRAM “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE PROGRAM IS WITH YOU. SHOULD THE PROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF ALL NECESSARY SERVICING, REPAIR OR CORRECTION.",
     "version":"1.0.0",
     "license": "MIT",
@@ -60,9 +65,9 @@
                 {
                 "type": "textarea",
                 "placeholder": {
-                    "es": "<?html version=\"1.0\" encoding=\"UTF-8\"?>\n<?xml-stylesheet type='text/xsl'?> \n<Users>\n\t<User>\n\t<Name>User 1</Name>\n\t<Surname>Test</Surname>\n\t<Country>USA</Country>\n\t<Company>Acme</Company>\n\t</User>\n</Users>",
-                    "en": "<?html version=\"1.0\" encoding=\"UTF-8\"?>\n<?xml-stylesheet type='text/xsl'?> \n<Users>\n\t<User>\n\t<Name>User 1</Name>\n\t<Surname>Test</Surname>\n\t<Country>USA</Country>\n\t<Company>Acme</Company>\n\t</User>\n</Users>",
-                    "pr": "<?html version=\"1.0\" encoding=\"UTF-8\"?>\n<?xml-stylesheet type='text/xsl'?> \n<Users>\n\t<User>\n\t<Name>User 1</Name>\n\t<Surname>Test</Surname>\n\t<Country>USA</Country>\n\t<Company>Acme</Company>\n\t</User>\n</Users>"
+                    "es": "<!DOCTYPE html>\n<html lang=\"es\">\n<head>\n\t <meta charset=\"UTF-8\">\n\t<meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n\t<title></title>\n</head>",
+                    "en": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n\t <meta charset=\"UTF-8\">\n\t<meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n\t<title></title>\n</head>",
+                    "pr": "<!DOCTYPE html>\n<html lang=\"pr\">\n<head>\n\t <meta charset=\"UTF-8\">\n\t<meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n\t<title></title>\n</head>"
                 },
                 "title": {
                     "es": "HTML como texto",
@@ -366,9 +371,9 @@
                 {
                     "type": "input",
                     "placeholder": {
-                        "es": "latin-1",
-                        "en": "latin-1",
-                        "pr": "latin-1"
+                        "es": "utf-8",
+                        "en": "utf-8",
+                        "pr": "utf-8"
                     },
                     "title": {
                         "es": "Codificación",
