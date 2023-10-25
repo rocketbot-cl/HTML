@@ -306,11 +306,6 @@
                     "en": "Assign result to variable:",
                     "pr": "Atribuir resultado à variável:"
                 },
-                "help": {
-                    "es": "Nombre de variable sin {}",
-                    "en": "Variable name without {}",
-                    "pr": "Nome da variável sem {}"
-                },
                 "description": {
                     "es": "Variable donde se almacena el resultado de Insertar Etiqueta",
                     "en": "Variable where the result of Insert Tag is stored"    

@@ -72,12 +72,16 @@ try:
             session = SESSION_DEFAULT
         if not encoding:
             encoding = "utf-8"
-       
         
         try:
-            html = HTML(path)
-            html.open_html()
+            if path:   
+                html = HTML(path)
+                html.open_html()
+            else:
+                html = html_
+
             mod_html_sessions[session]={'path': path, 'html': html}
+
         except Exception as e:
             PrintException()
             res = False

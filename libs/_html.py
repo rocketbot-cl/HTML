@@ -10,9 +10,6 @@ class HTML:
         
     def open_html(self, encoding='utf-8'):
             
-        if not self.path:
-            raise FileNotFoundError('HTML File Missing')
-            
         with open(self.path, encoding=encoding) as f:
             
             self.code = f.read()
@@ -34,7 +31,6 @@ class HTML:
         if css: #si se proporciona la ubicacion
             
             location = self._html.select(css) #busca el elemento xpath
-            print(location)
             location = location[0]
             print(location)
     
