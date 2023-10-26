@@ -1,10 +1,10 @@
 {
     "author":"Corina Suarez",
-    "description": "Abre archivos HTML para extrer o agregar información.|  Open HTML files to get or add data.",
+    "description": "Módulo para trabajar con HTML | Module to work with HTML ",
     "description_lang": {
-        "en": "Module to open HTML files and get or add data",
-        "es": "Modulo para abrir archivos HTML y extraer o agregar información",
-        "pr": "Módulo para abrir arquivos HTML e extrair ou adicionar informações "
+        "en": "Module to work with HTML. Read and edit HTML files",
+        "es": "Módulo para trabajar con HTML. Lee y edita archivos HTML",
+        "pr": "Módulo para trabalhar com HTML. Ler e editar arquivos HTML"
     },
     "disclaimer":"THERE IS NO WARRANTY FOR THE PROGRAM, TO THE EXTENT PERMITTED BY APPLICABLE LAW. EXCEPT WHEN OTHERWISE STATED IN WRITING THE COPYRIGHT HOLDERS AND/OR OTHER PARTIES PROVIDE THE PROGRAM “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE PROGRAM IS WITH YOU. SHOULD THE PROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF ALL NECESSARY SERVICING, REPAIR OR CORRECTION.",
     "version":"1.0.0",
@@ -250,8 +250,8 @@
                     "pr": "Atributo do Tag"
                 },
                 "description":{
-                    "es": "Nombre del Atributo HTML para la etiqueta a crear",
-                    "en": "HTML Attribute name for the tag to create"
+                    "es": "Nombre del Atributo HTML para la etiqueta a crear. Opcional.",
+                    "en": "HTML Attribute name for the tag to create. Optional."
                 },
                 "id": "attrName",
                 "css": "col-md-6"
@@ -264,13 +264,13 @@
                     "pr": "minhaclasse"
                 },
                 "title": {
-                    "es": "Texto del Atributo",
-                    "en": "Attribute Text",
-                    "pr": "Texto do Atributo"
+                    "es": "Valor del Atributo",
+                    "en": "Attribute Value",
+                    "pr": "Valor do atributo"
                 },
                 "description":{
-                    "es": "Atributo HTML para la etiqueta a crear",
-                    "en": "HTML Attribute for the tag to create"
+                    "es": "Valor del atributo HTML para la etiqueta a crear. Opcional.",
+                    "en": "HTML attribute value for the tag to create. Optional."
                 },
                 "id": "attrText",
                 "css": "col-md-6"

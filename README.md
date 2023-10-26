@@ -4,9 +4,9 @@
 
 # HTML
   
-Module to open HTML files and get or add data  
+Module to work with HTML. Read and edit HTML files  
 
-*Read this in other languages: [English](README.md), [Português](README.pr.md), [Español](README.es.md)*
+
 
 ## How to install this module
   

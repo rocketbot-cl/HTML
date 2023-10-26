@@ -18,24 +18,26 @@ class HTML:
         self._html = BeautifulSoup(self.code, 'html.parser')
 
 
-    def add_tag(self, tag, tag_text, attr, attr_text, css=None):        
+    def add_tag(self, tag, tag_text, attr:str=None, attr_text:str=None, css=None):        
             
         if not tag:
             raise Exception('Tag name undefined')
         
-        new_tag = self._html.new_tag(tag) #crea la nueva etiqueta
-        new_tag.string = tag_text #setea la leyenda de la etiqueta
-        new_tag[attr]=attr_text #setea el atributo
+        new_tag = self._html.new_tag(tag)
+        new_tag.string = tag_text 
 
-        if css: #si se proporciona la ubicacion
+        if attr and attr_text:
+            new_tag[attr]=attr_text
+
+        if css:
             
-            location = self._html.select(css) #busca el elemento xpath
+            location = self._html.select(css) 
             location = location[0]
             print(location)
     
             location.append(new_tag)            
 
-        else: #sino, lo agrega al final
+        else:
             self._html.append(new_tag)
        
         

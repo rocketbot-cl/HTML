@@ -4,10 +4,10 @@
 
 # HTML
   
-Módulo para abrir arquivos HTML e extrair ou adicionar informações   
+Módulo para trabalhar com HTML. Ler e editar arquivos HTML  
 
- 
 ![banner](imgs/Modulo_HTML.jpg)
+
 
 ## Como instalar este módulo
   
@@ -24,8 +24,15 @@ Carregar dados de um arquivo HTML na memória
 |Parâmetros|Descrição|exemplo|
 | --- | --- | --- |
 |Caminho do arquivo HTML|Link the HTML file to the corresponding path|C:/Users/usuario/Desktop/archivo.html|
-|HTML como texto|Connect the HTML code passed as text, without having to create the file|`<!DOCTYPE html><html lang="pr"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title></title></head>`|
-|Codificação|Encoding with which the HTML file is required to be opened. By default it is UTF-8|UTF-8|
+|HTML como texto|Connect the HTML code passed as text, without having to create the file|<!DOCTYPE html>
+<html lang="pr">
+<head>
+	 <meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title></title>
+</head>|
+|Codificação|Encoding with which the HTML file is required to be opened. By default it is UTF-8|utf-8|
 |Atribuir resultado à variável|Variable where the result of Load HTML is stored|var|
 |ID Sessão|Optional ID to identify open sessions|s1|
 
@@ -37,8 +44,8 @@ Inserir um tag no HTML
 |ID Sessão|ID of the open file to which you want to add the tag, in the case of having multiple open sessions|s1|
 |Nome do tag|Name of the HTML tag to create the element|div|
 |Texto do Tag|Text of the HTML Element to create with the tag|Oi Mundo|
-|Atributo do Tag|HTML Attribute name for the tag to create|class|
-|Texto do Atributo|HTML Attribute for the tag to create|minhaclasse|
+|Atributo do Tag|HTML Attribute name for the tag to create. Optional.|class|
+|Valor do atributo|HTML attribute value for the tag to create. Optional.|minhaclasse|
 |Local de inserção|Css selector or Xpath where the tag insertion will be made|body > p|
 |Atribuir resultado à variável|Variable where the result of Insert Tag is stored|var|
 

@@ -4,10 +4,10 @@
 
 # HTML
   
-Module to open HTML files and get or add data  
-
+Module to work with HTML. Read and edit HTML files  
   
 ![banner](imgs/Modulo_HTML.jpg)
+
 
 ## How to install this module
   
@@ -37,8 +37,8 @@ Insert tag on HTML
 |Session ID|ID of the open file to which you want to add the tag, in the case of having multiple open sessions|s1|
 |Tag name|Name of the HTML tag to create the element|div|
 |Tag Text|Text of the HTML Element to create with the tag|Hello World|
-|Tag Attribute|HTML Attribute name for the tag to create|class|
-|Attribute Text|HTML Attribute for the tag to create|myclass|
+|Tag Attribute|HTML Attribute name for the tag to create. Optional.|class|
+|Attribute Value|HTML attribute value for the tag to create. Optional.|myclass|
 |Insertion location|Css selector or Xpath where the tag insertion will be made|body > p|
 |Assign result to variable|Variable where the result of Insert Tag is stored|var|
 

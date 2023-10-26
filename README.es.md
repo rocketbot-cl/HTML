@@ -4,9 +4,9 @@
 
 # HTML
   
-Modulo para abrir archivos HTML y extraer o agregar información  
+Módulo para trabajar con HTML. Lee y edita archivos HTML  
 
-*Read this in other languages: [English](README.md), [Português](README.pr.md), [Español](README.es.md)*
+
 
 ## Como instalar este módulo
   
