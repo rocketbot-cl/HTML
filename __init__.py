@@ -72,16 +72,17 @@ try:
             session = SESSION_DEFAULT
         if not encoding:
             encoding = "utf-8"
-        
+
         try:
             if path:   
                 html = HTML(path)
-                html.open_html()
+            
             else:
-                html = html_
+                html = HTML(code=html_)
 
+            html.open_html()
             mod_html_sessions[session]={'path': path, 'html': html}
-
+            
         except Exception as e:
             PrintException()
             res = False
@@ -141,8 +142,9 @@ try:
             raise Exception('The session no exists')
         
         try:
+            
             html = mod_html_sessions[session]['html']
-
+            
             html.add_tag(tag, tag_text, attr, attr_text, css)
             
             res = html.to_string()
@@ -150,7 +152,7 @@ try:
         except Exception as e:
             PrintException()
             raise e
-              
+
         if var_:
             SetVar(var_, res)
 
