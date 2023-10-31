@@ -23,8 +23,9 @@ Para instalar librerias se debe ingresar por terminal a la carpeta "libs"
     pip install <package> -t .
 
 """
+from bs4 import BeautifulSoup
+from xml.etree import ElementTree as ET
 import os
-import traceback
 
 base_path = tmp_global_obj["basepath"]
 cur_path = os.path.join(base_path, 'modules', 'HTML', 'libs')
@@ -32,17 +33,13 @@ cur_path = os.path.join(base_path, 'modules', 'HTML', 'libs')
 if cur_path not in sys.path:
         sys.path.append(cur_path)
 
-try:
-    from _html import HTML
-except Exception as e:
-    traceback.print_exc()
-    raise e
+from _html import HTML
+
 
 # Globals declared here.
 global mod_html_sessions
 # Defaults declared here.
 SESSION_DEFAULT = "default"
-
 # Initialize settings for the module here.
 
 try:
@@ -76,12 +73,17 @@ try:
             session = SESSION_DEFAULT
         if not encoding:
             encoding = "utf-8"
-       
-        
+
         try:
-            html = HTML(path)
+            if path:   
+                html = HTML(path)
+            
+            else:
+                html = HTML(code=html_)
+
             html.open_html()
             mod_html_sessions[session]={'path': path, 'html': html}
+            
         except Exception as e:
             PrintException()
             res = False
@@ -141,16 +143,18 @@ try:
             raise Exception('The session no exists')
         
         try:
-            html = mod_html_sessions[session]['html']
 
+            html = mod_html_sessions[session]['html']
+            
             html.add_tag(tag, tag_text, attr, attr_text, css)
             
+
             res = html.to_string()
 
         except Exception as e:
             PrintException()
             raise e
-              
+
         if var_:
             SetVar(var_, res)
 
@@ -163,6 +167,9 @@ try:
         if not session:
             session = SESSION_DEFAULT
         
+        if not decode:
+            decode = 'utf-8'
+
         res = True
         
         try:
@@ -179,7 +186,5 @@ try:
 
 except Exception as e:
     PrintException()
-    traceback.print_exc()
     raise e
 
-    
