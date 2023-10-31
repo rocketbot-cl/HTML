@@ -22,7 +22,7 @@ class HTML:
             
         if not tag:
             raise Exception('Tag name undefined')
-        
+
         new_tag = self._html.new_tag(tag)
         new_tag.string = tag_text 
 
@@ -32,6 +32,7 @@ class HTML:
         if css:
             
             location = self._html.select(css) 
+
             location = location[0]
             print(location)
     
@@ -42,7 +43,6 @@ class HTML:
        
         
     def save_html(self, path_save=None, decode='utf-8'):
-        
         if self._html is None:
             raise FileNotFoundError('The HTML file is not open')
 

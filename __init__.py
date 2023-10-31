@@ -35,6 +35,7 @@ if cur_path not in sys.path:
 
 from _html import HTML
 
+
 # Globals declared here.
 global mod_html_sessions
 # Defaults declared here.
@@ -142,11 +143,12 @@ try:
             raise Exception('The session no exists')
         
         try:
-            
+
             html = mod_html_sessions[session]['html']
             
             html.add_tag(tag, tag_text, attr, attr_text, css)
             
+
             res = html.to_string()
 
         except Exception as e:
@@ -185,3 +187,4 @@ try:
 except Exception as e:
     PrintException()
     raise e
+

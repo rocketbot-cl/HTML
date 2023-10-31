@@ -500,6 +500,7 @@
                         "es": "var",
                         "en": "var",
                         "pr": "var"
+
                     },
                     "title": {
                         "es": "Asignar resultado a variable:",
