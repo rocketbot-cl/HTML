@@ -59,4 +59,29 @@ class HTML:
         return self._html.prettify(decode).decode(decode)
 
 
+    def list_to_table(list):
+
+        table = "<table>\n"
+        for row in list:
+            table += "<tr>"
+            for item in row:
+                table += "<td>{}</td>".format(item)
+            table += "</tr>\n"
+        table += "</table>"
+        return table
+
+    def table_to_list(html_table):
+    
+        soup = BeautifulSoup(html_table, 'html.parser') 
+        table = soup.find('table')
+        rows = table.find_all('tr')
+        
+        data = [] 
+
+        for row in rows: 
+            cells = row.find_all('td') 
+            row_data = [cell.get_text() for cell in cells]   
+            data.append(row_data) 
+
+        return data
 

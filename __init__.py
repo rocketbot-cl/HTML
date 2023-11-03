@@ -158,6 +158,46 @@ try:
         if var_:
             SetVar(var_, res)
 
+    if module == "listToTable":
+        """
+        List to HTML Table: convert a list to a HTML format table
+        """
+        var_ = GetParams('result')
+        list = GetParams('list')
+        res = None
+        
+        try:
+            list = eval(list)
+            html_table = HTML.list_to_table(list)
+            
+        except Exception as e:
+            PrintException()
+            raise e
+        
+        if var_:
+            res = html_table
+            SetVar(var_, res)
+
+    if module == "tableToList":
+        """
+        HTML Table to List: convert a HTML format table to a list
+        """
+        var_ = GetParams('result')
+        table = GetParams('table')
+        res = None
+        
+        try:
+            
+            html_list = HTML.table_to_list(table)
+            
+        except Exception as e:
+            PrintException()
+            raise e
+        
+        if var_:
+            res = html_list
+            SetVar(var_, res)
+
     if module == 'savehtml':
         path_save = GetParams('pathSave')
         var_ = GetParams('result')
