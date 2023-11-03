@@ -5,7 +5,7 @@
 # HTML
   
 Module to work with HTML. Read and edit HTML files  
-  
+
 ![banner](imgs/Modulo_HTML.jpg)
 
 
@@ -24,8 +24,8 @@ Load data from an HTML file into memory
 |Parameters|Description|example|
 | --- | --- | --- |
 |HTML file path|Link the HTML file to the corresponding path|C:/Users/usuario/Desktop/archivo.html|
-|HTML as text|Connect the HTML code passed as text, without having to create the file|`<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title></title></head>`|
-|Encoding|Encoding with which the HTML file is required to be opened. By default it is UTF-8|UTF-8|
+|HTML as text|Connect the HTML code passed as text, without having to create the file|`<!DOCTYPE html><html lang="pr"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title></title></head>`|
+|Encoding|Encoding with which the HTML file is required to be opened. By default it is UTF-8|utf-8|
 |Assign result to variable|Variable where the result of Load HTML is stored|var|
 |Session ID|Optional ID to identify open sessions|s1|
 
@@ -41,6 +41,22 @@ Insert tag on HTML
 |Attribute Value|HTML attribute value for the tag to create. Optional.|myclass|
 |Insertion location|Css selector or Xpath where the tag insertion will be made|body > p|
 |Assign result to variable|Variable where the result of Insert Tag is stored|var|
+
+### List to HTML Tables
+  
+Convert a list to an HTML format table
+|Parameters|Description|example|
+| --- | --- | --- |
+|List|List to be converted to an HTML format table|[['s1', 's2', 's3'], ['t1', 't2', 't3']]|
+|Assign result to variable|Variable where the converted HTML table is stored|var|
+
+### HTML Tables to List
+  
+Convert an HTML format table to a list
+|Parameters|Description|example|
+| --- | --- | --- |
+|Table|HTML format table to be converted to a List|`<table><tr><td>1</td><td>Jane</td></tr><tr><td>2</td><td>John</td></tr></table>`|
+|Assign result to variable|Variable where the converted list is stored|var|
 
 ### Save File
   

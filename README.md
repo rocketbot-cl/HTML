@@ -6,7 +6,7 @@
   
 Module to work with HTML. Read and edit HTML files  
 
-
+*Read this in other languages: [English](README.md), [Português](README.pr.md), [Español](README.es.md)*
 
 ## How to install this module
   
@@ -24,10 +24,16 @@ Load data from an HTML file into memory
 2. Insert Tag  
 Insert tag on HTML
 
-3. Save File  
+3. List to HTML Tables  
+Convert a list to an HTML format table
+
+4. HTML Tables to List  
+Convert an HTML format table to a list
+
+5. Save File  
 Save HTML File
 
-4. End Session  
+6. End Session  
 Remove an HTML session from memory  
 
 
