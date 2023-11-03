@@ -6,7 +6,7 @@
   
 Módulo para trabajar con HTML. Lee y edita archivos HTML  
 
-*Read this in other languages: [English](README.md), [Português](README.pr.md), [Español](README.es.md)*
+
 
 ## Como instalar este módulo
   
@@ -24,16 +24,10 @@ Carga datos de un archivo HTML en memoria
 2. Insertar Etiqueta  
 Inserta una etiqueta en el HTML
 
-3. Lista a Tabla HTML  
-Convierte una lista en una tabla de formato HTML
-
-4. Tabla HTML a Lista  
-Convierte una tabla de formato HTML en una lista
-
-5. Guardar archivo  
+3. Guardar archivo  
 Guarda datos en un archivo HTML
 
-6. Cerrar Sesión  
+4. Cerrar Sesión  
 Quita una sesión de HTML y libera memoria  
 
 
