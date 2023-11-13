@@ -24,10 +24,16 @@ Carga datos de un archivo HTML en memoria
 2. Insertar Etiqueta  
 Inserta una etiqueta en el HTML
 
-3. Guardar archivo  
+3. Lista a Tabla HTML  
+Convierte una lista en una tabla de formato HTML
+
+4. Tabla HTML a Lista  
+Convierte una tabla de formato HTML en una lista
+
+5. Guardar archivo  
 Guarda datos en un archivo HTML
 
-4. Cerrar Sesión  
+6. Cerrar Sesión  
 Quita una sesión de HTML y libera memoria  
 
 

@@ -24,8 +24,8 @@ Carga datos de un archivo HTML en memoria
 |Parámetros|Descripción|ejemplo|
 | --- | --- | --- |
 |Ruta del archivo HTML|Conecta el archivo HTML correspondiente a la ruta|C:/Users/usuario/Desktop/archivo.html|
-|HTML como texto|Conecta el código HTML pasado como texto, sin necesidad de tener creado el archivo|`<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title></title></head>`|
-|Codificación|Codificación con la que se requiere abrir el archivo HTML. Por default es UTF-8|UTF-8|
+|HTML como texto|Conecta el código HTML pasado como texto, sin necesidad de tener creado el archivo|`<!DOCTYPE html><html lang="pr"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title></title></head>`|
+|Codificación|Codificación con la que se requiere abrir el archivo HTML. Por default es UTF-8|utf-8|
 |Asignar resultado a variable|Variable donde se almacena el resultado de Cargar HTML|var|
 |ID Sesión|ID opcional para poder identificar sesiones abiertas|s1|
 
@@ -41,6 +41,22 @@ Inserta una etiqueta en el HTML
 |Valor del Atributo|Valor del atributo HTML para la etiqueta a crear. Opcional.|miclase|
 |Ubicación de la inserción|Selector css o Xpath donde se realizara la inserción de la etiqueta|body > p|
 |Asignar resultado a variable|Variable donde se almacena el resultado de Insertar Etiqueta|var|
+
+### Lista a Tabla HTML
+  
+Convierte una lista en una tabla de formato HTML
+|Parámetros|Descripción|ejemplo|
+| --- | --- | --- |
+|Lista|Lista que se va a convertir en una tabla de formato HTML|[['s1', 's2', 's3'], ['t1', 't2', 't3']]|
+|Asignar resultado a variable|Variable donde se almacena la tabla HTML convertida|var|
+
+### Tabla HTML a Lista
+  
+Convierte una tabla de formato HTML en una lista
+|Parámetros|Descripción|ejemplo|
+| --- | --- | --- |
+|Tabla|Tabla de formato HTML que se va a convertir en una Lista|`<table><tr><td>1</td><td>Juana</td></tr><tr><td>2</td><td>Juan</td></tr></table>`|
+|Asignar resultado a variable|Variable donde se almacena la lista convertida|var|
 
 ### Guardar archivo
   
