@@ -224,6 +224,47 @@ try:
         if var_:
             SetVar(var_, res)
 
+    if module == 'extractData':
+        html = GetParams('html')
+        var_ = GetParams('result')
+        queries = GetParams('queries')
+
+        if queries:
+            queries = eval(queries)
+        
+        try:
+            soup = BeautifulSoup(html, 'html.parser')
+            results = {}
+
+            for key, pattern in queries.items():
+                def find_with_pattern(t, pattern=pattern):
+                    return t and pattern in t
+
+                match = soup.find(text=find_with_pattern) 
+                if match:
+                    results[key] = match.split(":")[1].strip("; ").replace("\\xa0", " ")
+                else:
+                    results[key] = None
+
+            for key, pattern in queries.items():
+                if key.startswith('link_'):
+                    def find_pattern(t, pattern=pattern):
+                        return pattern in t 
+
+                    elements = soup.find_all(text=find_pattern) 
+
+                    for element in elements:
+                        link = element.find_next('a')
+                        if link:
+                            results[key] = link['href']
+                            break
+                    
+            SetVar(var_, results)
+            
+        except Exception as e:
+            PrintException()
+            raise e
+
 except Exception as e:
     PrintException()
     raise e

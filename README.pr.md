@@ -6,7 +6,7 @@
   
 Módulo para trabalhar com HTML. Ler e editar arquivos HTML  
 
-
+*Read this in other languages: [English](README.md), [Português](README.pr.md), [Español](README.es.md)*
 
 ## Como instalar este módulo
   
@@ -33,7 +33,10 @@ Converter uma tabela de formato HTML em uma lista
 5. Salvar arquivo  
 Salvar dados em um arquivo HTML
 
-6. Terminar Sessão  
+6. Extrair dado  
+Extrair dados de um arquivo HTML
+
+7. Terminar Sessão  
 Remove uma sessão HTML e libera memória  
 
 
